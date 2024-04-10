@@ -1,0 +1,30 @@
+{% extends "base_template.html" %}
+
+{% block title %}Portal Telcos - Isbel{% endblock %}
+
+{% block content %}
+    <table border="1">
+       <tr>
+           <th>Name</th>
+           <th>Status</th>
+       </tr>
+      {% for radio in radios %}
+       <tr>
+           <td><a href="{{ radio.public_url() }}">{{ radio.name }}</a></td>
+           {% if radio.is_active %}
+             <td>Active</td>
+           {% else %}
+             <td>Inactive</td>
+           {% endif %}
+       </tr>
+       <tr>
+          <td>
+             <form action="{{ url_for('radio_delete') }}" method=post>
+                <input type=hidden value="{{ radio.unique_name }}" name="unique_name" />
+                <input type=submit value="Delete {{ radio.name }}" />
+             </form>
+          </td>
+       </tr>
+      {% endfor %}
+    </table>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "base_template.html" %}
+
+{% block title %}
+        Nueva radio
+{% endblock %}
+
+{% block content %}
+    <form action="" method="post" novalidate>
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br><br>
+
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username"><br><br>
+        
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password"><br><br>
+        
+        <input type="submit" value="Agregar radio">
+    </form>
+{% endblock %}

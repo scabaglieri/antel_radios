@@ -1,0 +1,24 @@
+CREATE DATABASE antel_radios;
+
+crear el usuario externo con pass Db-flask y darle permisos sobre la db
+fijar de cambiar para permitir el acceso externo a la DB 
+
+CREATE TABLE radios (
+    id int AUTO_INCREMENT,
+    name varchar(80) UNIQUE NOT NULL,
+	unique_name varchar(80) UNIQUE NOT NULL,
+    username varchar(255) UNIQUE NOT NULL,
+	password varchar(128) NOT NULL,
+    is_active BOOLEAN,
+	PRIMARY KEY (id)
+);
+
+
+CREATE TABLE portal_user (
+    id int AUTO_INCREMENT,
+    name varchar(80) UNIQUE NOT NULL,	
+    email varchar(255) UNIQUE NOT NULL,
+	password varchar(128) NOT NULL,
+    is_admin BOOLEAN,
+	PRIMARY KEY (id)
+);
